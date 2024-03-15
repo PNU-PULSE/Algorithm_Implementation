@@ -1,4 +1,4 @@
-//Warning! solution of 13505!
+//Warning! binary trie. solution of 13505!
 struct trie{
     trie* node[2]; bool end;
     trie(){
