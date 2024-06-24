@@ -1,18 +1,16 @@
 #define MAX_N 100000
 vector<int> edge[MAX_N];
 bool visited[MAX_N];
-void dfs(){
-    vector<int> order;
-    stack<int> s;
-    while (!s.empty()){
-        ll v = s.top(); s.pop();
-        visited[v] = true; order.emplace_back(v);
-        for (int nxt: edge[v]){
-            if (visited[nxt])  continue;
-            s.push(nxt);
-        }
+vector<int> order;
+void dfs(int i){
+    visited[i] = 1;
+    for (int nxt: edge[v]){
+        if (visited[nxt])  continue;
+            dfs(nxt);
     }
-    for (int o: order){
-        cout << o << "\n";
-    }
+}
+
+int main(){
+    dfs(1);
+    for (int i: order)    cout << i << "\n";
 }
