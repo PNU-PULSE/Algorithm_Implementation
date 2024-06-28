@@ -1,19 +1,19 @@
-void graham_scan(vector<pt<ll>>& vec){
-    swap(vec[0], *min_element(vec.begin(), vec.end()));
-    pt<ll> point = vec[0];
-    sort(vec.begin() + 1, vec.end(), [point](pt<ll> a, pt<ll> b){
-        ll ccw = point.cross(a, b);
+template <typename T>
+vector<pt<T>> hull(vector<pt<T>>& vec, int n) {
+    swap(*min_element(vec.begin(), vec.end()), vec[0]);
+    pt<T> point = vec[0];
+    sort(vec.begin() + 1, vec.end(), [point](pt<T> a, pt<T> b){
+        T ccw = point.cross(a, b);
         if (ccw != 0)   return ccw > 0;
-        return a.dist2() < b.dist2();
+        return (a - point).dist2() < (b - point).dist2();
     });
-    vector<pt<ll>> st;
+    vector<pt<T>> st;
     for (auto now: vec){
         while (st.size() > 1 && st[st.size() - 2].cross(st[st.size() - 1], now) <= 0){
             st.pop_back();
         }
         st.emplace_back(now);
     }
-    for (auto [x, y]: st){
-        cout << "(" << x << ", " << y << ")\n";
-    }
+
+    return st;
 }
