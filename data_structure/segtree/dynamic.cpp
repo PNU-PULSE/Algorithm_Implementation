@@ -1,7 +1,7 @@
 //reference: https://justicehui.github.io/medium-algorithm/2020/02/28/DynamicSeg/
 struct Node{
     Node *l, *r;
-    ll tsum;
+    ll tsum;//구간 합
     Node(): l(nullptr), r(nullptr), tsum(0) {}
 };
 void update(Node *node, int s, int e, int p, ll val){
@@ -9,7 +9,7 @@ void update(Node *node, int s, int e, int p, ll val){
         node->tsum = val; return;
     }
     int m = (s + e) >> 1;
-    if (p <= m){
+    if (p <= m){//l, r을 반으로 나눠서 구간 선택, 나머지는 일반적인 세그와 동일
         if (!node->l) node->l = new Node();
         update(node->l, s, m, p, val);
     }
