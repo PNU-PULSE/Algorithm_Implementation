@@ -1,3 +1,4 @@
+//reference: https://lem0nad3.tistory.com/131
 template<typename T>
 T rotating_calipers(vector<pt<T>>& hull){
     T ans = numeric_limits<T>::min();
