@@ -3,3 +3,4 @@
 - convex hull 2d
     - graham scan
     - rotating calipers
+- Minimum Enclosing Circle
