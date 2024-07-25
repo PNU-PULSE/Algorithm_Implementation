@@ -1,4 +1,4 @@
-https://www.geeksforgeeks.org/minimum-enclosing-circle-using-welzls-algorithm/
+//ref: https://www.geeksforgeeks.org/minimum-enclosing-circle-using-welzls-algorithm/
 using ld = long double;
 struct circle{
     pt<ld> ct;
