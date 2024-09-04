@@ -1,3 +1,4 @@
+//ref: https://m.blog.naver.com/kks227/220992598966
 struct Trie{
     Trie *go[26]{};
     Trie *fail{};
