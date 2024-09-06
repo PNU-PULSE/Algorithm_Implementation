@@ -1,4 +1,3 @@
-template<typename T>
 class pq {
 private:
     int size, height;
@@ -12,7 +11,7 @@ private:
 public:
     pq() : root(nullptr), size(0), height(0) {}
 
-    void insert(T value) {
+    void push(T value) {
         size++;
         if ((size & (size - 1)) == 0) height++;
         if (size == 1) {
@@ -23,16 +22,17 @@ public:
         Node* now = root;
         for (int i = height - 2; i >= 0; i--) {
             if (((1 << i) & size) == 0) {
-                if (!now->l) now->l = new Node(0);
-                now->l->parent = now;
+                if (!now->l) {
+                    now->l = new Node(value); now->l->parent = now;
+                }
                 now = now->l;
             } else {
-                if (!now->r) now->r = new Node(0);
-                now->r->parent = now;
+                if (!now->r) {
+                    now->r = new Node(value); now->r->parent = now;
+                }
                 now = now->r;
             }
         }
-        now->value = value;
 
         while (now->parent && now->value < now->parent->value) {
             swap(now->value, now->parent->value);
