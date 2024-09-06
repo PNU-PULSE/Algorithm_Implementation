@@ -87,20 +87,3 @@ public:
         return size == 0;
     }
 };
-
-int main() {
-    cin.tie(0); cout.tie(0); ios_base::sync_with_stdio(false);
-    pq<int> test;
-    int n; cin >> n;
-    while (n--){
-        int x; cin >> x;
-        if (x) test.insert(x);
-        else{
-            if (test.empty())   cout << 0 << "\n";
-            else {
-                cout << test.top() << "\n"; test.pop();
-            }
-        }
-    }
-    return 0;
-}
