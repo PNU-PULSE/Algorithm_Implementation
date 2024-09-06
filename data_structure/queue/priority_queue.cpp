@@ -1,3 +1,4 @@
+template <typename T>
 class pq {
 private:
     int size, height;
