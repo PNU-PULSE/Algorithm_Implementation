@@ -1,5 +1,5 @@
 template<typename T>
-class Queue{
+class Deque{
     class Node{
     public:
         T value;
