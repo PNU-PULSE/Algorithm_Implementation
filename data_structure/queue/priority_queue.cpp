@@ -8,7 +8,7 @@ private:
     struct Node {
         T value;
         Node *l, *r, *parent;
-        Node(T val) : value(val), l(nullptr), r(nullptr), parent(nullptr) {} // Node constructor
+        Node(T val) : value(val), l(nullptr), r(nullptr), parent(nullptr) {}
     };
     Node* root;
 
